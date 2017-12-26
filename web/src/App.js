@@ -12,6 +12,7 @@ function getParams(){
     return params;
 }
 
+
 function f1() {
     alert("test");
 }
