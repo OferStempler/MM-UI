@@ -14,27 +14,17 @@ class TableExampleSimple extends Component {
     //-----------------------------------------------------------------------------------------------------------------
     constructor(props) {
         super(props);
-       // var  params= {
-       //      fixedHeader: true,
-       //      fixedFooter: true,
-       //      stripedRows: false,
-       //      showRowHover: false,
-       //      selectable: true,
-       //      multiSelectable: false,
-       //      enableSelectAll: false,
-       //      deselectOnClickaway: true,
-       //      showCheckboxes: false,
-       //      height: '300px'
-       //  };
         var themeNum   = this.props.theme;
+        var urlParams = this.props.params;
 
-        this.state = {'users': '', theme: themeNum} ; // <-- initializing state
+        this.state = {'users': '', theme: themeNum, urlParams: urlParams} ; // <-- initializing state
 
     }
 
     //-----------------------------------------------------------------------------------------------------------------
     getData() {
-        var apiBaseUrl = "http://localhost:8080/getAll";
+        var params = this.state.urlParams;
+        var apiBaseUrl = `http://localhost:8080/getAllParams?${params}`;
         // var self = this;
         var payload = {}
         axios.get(apiBaseUrl, payload)
@@ -58,11 +48,9 @@ class TableExampleSimple extends Component {
 
         var themeNum = this.state.theme;
         if ( [user.themeCode] == themeNum) {
-
-
             return (<TableRow>
-                    <TableRowColumn colSpan="2" style={{textAlign: 'right'}}>{user.answerDescription}</TableRowColumn>
-                    <TableRowColumn colSpan="1" style={{textAlign: 'right'}}>{user.questionDescription}</TableRowColumn>
+                    <TableRowColumn  colSpan="0" style={{textAlign: 'right', whiteSpace: "normal"}}>{user.answerDescription}</TableRowColumn>
+                    <TableRowColumn  colSpan="0" style={{textAlign: 'right', whiteSpace: "normal"}}>{user.questionDescription}</TableRowColumn>
                 </TableRow>
             );
         }
@@ -70,24 +58,26 @@ class TableExampleSimple extends Component {
     //-----------------------------------------------------------------------------------------------------------------
     displayTable(users){
         var users1 = users;
+        var half = users1.length/2;
         if (Array.isArray ( users1 ) ){
-            return (
-                <div>
 
-                    <Table allRowsSelected={false}
-                           selectable={false}
-                           >
-                        <TableBody displayRowCheckbox={false}
-                                   showRowHover={true}
-                                   stripedRows={true}
+                return (
+                    <div>
 
+                        <Table allRowsSelected={false}
+                               selectable={false}
                         >
-                            { users1.map( (user) => this.displayRow(user) ) }
-                        </TableBody>
+                            <TableBody displayRowCheckbox={false}
+                                       showRowHover={true}
+                                       stripedRows={true}
+                            >
+                                { users1.map((user) => this.displayRow(user)) }
+                            </TableBody>
 
-                    </Table>
-                </div>
-            ); // return
+                        </Table>
+                    </div>
+                ); // return
+
         }else{
             return ( { users1 } );
         }

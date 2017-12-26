@@ -1,10 +1,18 @@
 .App {
-  text-align: right;
+  /*text-align: center;*/
   /*padding: 50px;*/
   margin: 50px;
+  width: 1500px;
+  margin-left: 8cm;
 
 }
+/*.table4 {*/
+  /*padding-bottom: 20px;*/
+/*}*/
+/*.tableName {*/
+  /*padding: 70px;*/
 
+/*}*/
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
