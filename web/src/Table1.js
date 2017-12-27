@@ -24,7 +24,12 @@ class TableExampleSimple extends Component {
     //-----------------------------------------------------------------------------------------------------------------
     getData() {
         var params = this.state.urlParams;
-        var apiBaseUrl = `http://localhost:8080/getAllParams?${params}`;
+        var apiBaseUrl = null;
+        if(params[0] === "") {
+            apiBaseUrl = `http://localhost:8080/getAll`;
+        } else {
+            apiBaseUrl = `http://localhost:8080/getAllParams${params}`;
+        }
         // var self = this;
         var payload = {}
         axios.get(apiBaseUrl, payload)
