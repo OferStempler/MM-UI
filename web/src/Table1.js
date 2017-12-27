@@ -10,6 +10,7 @@ import {
     TableRowColumn,
 } from 'material-ui/Table';
 
+
 class TableExampleSimple extends Component {
     //-----------------------------------------------------------------------------------------------------------------
     constructor(props) {
@@ -24,12 +25,13 @@ class TableExampleSimple extends Component {
     //-----------------------------------------------------------------------------------------------------------------
     getData() {
         var params = this.state.urlParams;
-        var apiBaseUrl = null;
-        if(params[0] === "") {
-            apiBaseUrl = `http://localhost:8080/getAll`;
+        var apiBaseUrl= null;
+        if(params[0] === ""){
+             apiBaseUrl = `http://localhost:8080/getAll`;
         } else {
-            apiBaseUrl = `http://localhost:8080/getAllParams${params}`;
+             apiBaseUrl = `http://localhost:8080/getAllParams?${params}`;
         }
+
         // var self = this;
         var payload = {}
         axios.get(apiBaseUrl, payload)
@@ -54,8 +56,8 @@ class TableExampleSimple extends Component {
         var themeNum = this.state.theme;
         if ( [user.themeCode] == themeNum) {
             return (<TableRow>
-                    <TableRowColumn  colSpan="0" style={{textAlign: 'right', whiteSpace: "normal"}}>{user.answerDescription}</TableRowColumn>
-                    <TableRowColumn  colSpan="0" style={{textAlign: 'right', whiteSpace: "normal"}}>{user.questionDescription}</TableRowColumn>
+                    <TableRowColumn  colSpan="5" style={{textAlign: 'right', whiteSpace: "normal"}}>{user.answerDescription}</TableRowColumn>
+                    <TableRowColumn  colSpan="5" style={{textAlign: 'right', whiteSpace: "normal"}}>{user.questionDescription}</TableRowColumn>
                 </TableRow>
             );
         }

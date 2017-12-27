@@ -32,17 +32,27 @@ class App extends Component {
 
                     <div class="col-sm-6">
                         <h1 className="tableName" align="right">מהות הבקשה</h1>
+                        <p/>
                         <TableExampleSimple params = {getParams()} theme ="1" />
+                        <p/>
+
                         <h1 className="tableName" align="right">נתוני בקשה ונכס</h1>
+                        <p/>
                         <TableExampleSimple params = {getParams()} theme ="4"/>
+
+
                     </div>
                     <div class="col-sm-6">
+
                     <h1 className="tableName"  align="right">פרטי לקוח</h1>
+                        <p/>
 
                     <TableExampleSimple params = {getParams()} theme ="2"/>
-
+                        <p/>
                     <h1 className="tableName" align="right">פרטים נוספים</h1>
-                    <TableExampleSimple params = {getParams()} theme ="3"/>
+                        <p/>
+
+                        <TableExampleSimple params = {getParams()} theme ="3"/>
                     </div>
 
                 </div>
