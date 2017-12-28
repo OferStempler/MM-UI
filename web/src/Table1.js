@@ -27,9 +27,9 @@ class TableExampleSimple extends Component {
         var params = this.state.urlParams;
         var apiBaseUrl= null;
         if(params[0] === ""){
-             apiBaseUrl = `http://localhost:8080/getAll`;
+             apiBaseUrl = `http://localhost:18083/getAll`;
         } else {
-             apiBaseUrl = `http://localhost:8080/getAllParams?${params}`;
+             apiBaseUrl = `http://localhost:18083/getMortgageReqDetails?${params}`;
         }
 
         // var self = this;

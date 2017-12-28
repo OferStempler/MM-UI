@@ -50,7 +50,7 @@ public class MainController {
 
     }
 // http://localhost:18083/getMortgageReqDetails?leadNum=1-5809949293&idNumber=308488469&idType=1&step=CON&userId=47242249
-    @RequestMapping(value = "/getAllParams", params = {"leadNum", "idNumber","idType", "step", "userId" }, method = RequestMethod.GET)
+    @RequestMapping(value = {"/getAllParams", "/getMortgageReqDetails"}, params = {"leadNum", "idNumber","idType", "step", "userId" }, method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public @ResponseBody MmDecisionTree[] getAll(
             @RequestParam("leadNum") String leadNum,
