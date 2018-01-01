@@ -25,37 +25,37 @@ class App extends Component {
         return (
             <MuiThemeProvider>
 
-
+                <TableExampleSimple params = {getParams()} theme ="1" />
                 {/*<div onLoad={getParams()} className="App" align="center" >*/}
-                <div className="App" align="center" >
+                {/*<div className="App" align="center" >*/}
 
 
-                    <div class="col-sm-6">
-                        <h1 className="tableName" align="right">מהות הבקשה</h1>
-                        <p/>
-                        <TableExampleSimple params = {getParams()} theme ="1" />
-                        <p/>
+                    {/*<div class="col-sm-6">*/}
+                        {/*<h1 className="tableName" align="right">מהות הבקשה</h1>*/}
+                        {/*<p/>*/}
+                        {/*<TableExampleSimple params = {getParams()} theme ="1" />*/}
+                        {/*<p/>*/}
 
-                        <h1 className="tableName" align="right">נתוני בקשה ונכס</h1>
-                        <p/>
-                        <TableExampleSimple params = {getParams()} theme ="4"/>
+                        {/*<h1 className="tableName" align="right">נתוני בקשה ונכס</h1>*/}
+                        {/*<p/>*/}
+                        {/*<TableExampleSimple params = {getParams()} theme ="4"/>*/}
 
 
-                    </div>
-                    <div class="col-sm-6">
+                    {/*</div>*/}
+                    {/*<div class="col-sm-6">*/}
 
-                    <h1 className="tableName"  align="right">פרטי לקוח</h1>
-                        <p/>
+                    {/*<h1 className="tableName"  align="right">פרטי לקוח</h1>*/}
+                        {/*<p/>*/}
 
-                    <TableExampleSimple params = {getParams()} theme ="2"/>
-                        <p/>
-                    <h1 className="tableName" align="right">פרטים נוספים</h1>
-                        <p/>
+                    {/*<TableExampleSimple params = {getParams()} theme ="2"/>*/}
+                        {/*<p/>*/}
+                    {/*<h1 className="tableName" align="right">פרטים נוספים</h1>*/}
+                        {/*<p/>*/}
 
-                        <TableExampleSimple params = {getParams()} theme ="3"/>
-                    </div>
+                        {/*<TableExampleSimple params = {getParams()} theme ="3"/>*/}
+                    {/*</div>*/}
 
-                </div>
+                {/*</div>*/}
             </MuiThemeProvider>
         ); // return
     }//render()

@@ -28,8 +28,6 @@ public class MmDecisionTree {
 
     private String QuestionDescription;
 
-
-
     private String AnswerDescription;
 
 }

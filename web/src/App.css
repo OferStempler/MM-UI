@@ -2,8 +2,13 @@
   /*text-align: center;*/
   /*padding: 50px;*/
   margin: 50px;
-
-
+}
+.errorMessage{
+  padding-right: 100px;
+  padding-top: 1cm;
+}
+.tableName {
+  align: right;
 }
 /*.table4 {*/
   /*padding-bottom: 20px;*/

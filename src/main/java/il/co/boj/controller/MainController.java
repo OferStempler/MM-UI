@@ -49,8 +49,8 @@ public class MainController {
         return list;
 
     }
-// http://localhost:18083/getMortgageReqDetails?leadNum=1-5809949293&idNumber=308488469&idType=1&step=CON&userId=47242249
-    @RequestMapping(value = {"/getAllParams", "/getMortgageReqDetails"}, params = {"leadNum", "idNumber","idType", "step", "userId" }, method = RequestMethod.GET)
+// http://localhost:18083/getMortgageDecisions?leadNum=1-5809949293&idNumber=308488469&idType=1&step=CON&userId=47242249
+    @RequestMapping(value = {"/getAllParams", "/getMortgageDecisions"}, params = {"leadNum", "idNumber","idType", "step", "userId" }, method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public @ResponseBody MmDecisionTree[] getAll(
             @RequestParam("leadNum") String leadNum,
@@ -66,6 +66,17 @@ public class MainController {
         ObjectMapper mapper = new ObjectMapper();
         String jsonList = loadFile.getData();
         MmDecisionTree[] list = gson.fromJson(jsonList, MmDecisionTree[].class);
+        return list;
+    }
+
+    @RequestMapping(value = "/emptyListTest", method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    public @ResponseBody MmDecisionTree[] getEmptyList(
+
+    ) {
+        System.out.println("Returning empty list");
+
+        MmDecisionTree[] list = new MmDecisionTree[0];
         return list;
     }
 }

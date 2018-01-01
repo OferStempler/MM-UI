@@ -2,4 +2,4 @@ logging:
   level:
    il.co.boj: debug
 
-server.port: 8080
+server.port: 18083
