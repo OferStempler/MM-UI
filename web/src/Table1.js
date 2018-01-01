@@ -28,15 +28,19 @@ class TableExampleSimple extends Component {
         var params = this.state.urlParams;
         var apiBaseUrl= null;
         console.log("GET params: " + params);
-        if(params[0] === ""){
-            apiBaseUrl = `${BACKEND_URL}/emptyListTest`;
-             // apiBaseUrl = `${BACKEND_URL}/getAll`;
-        } else {
-             // apiBaseUrl = `http://localhost:18083/getMortgageDecisions?${params}`;
-            // apiBaseUrl = `http://localhost:18083/emptyListTest`;
-            // apiBaseUrl = `http://localhost:18083/emptyListTest`;
-            apiBaseUrl =` ${BACKEND_URL}/getMortgageDecisions?${params}`;
-        }
+        //for prod
+        apiBaseUrl =` ${BACKEND_URL}/getMortgageDecisions?${params}`;
+
+        //for my testing
+        // if(params[0] === ""){
+        //     apiBaseUrl = `${BACKEND_URL}/emptyListTest`;
+        //      // apiBaseUrl = `${BACKEND_URL}/getAll`;
+        // } else {
+        //      // apiBaseUrl = `http://localhost:18083/getMortgageDecisions?${params}`;
+        //     // apiBaseUrl = `http://localhost:18083/emptyListTest`;
+        //     // apiBaseUrl = `http://localhost:18083/emptyListTest`;
+        //     apiBaseUrl =` ${BACKEND_URL}/getMortgageDecisions?${params}`;
+        // }
         console.log("Target uri: " + apiBaseUrl);
         // var self = this;
         var payload = {}
@@ -60,15 +64,15 @@ class TableExampleSimple extends Component {
 
     //-----------------------------------------------------------------------------------------------------------------
     displayRow( user, themNumber) {
-
+        var codeNumber = themNumber;
         // var themeNum = this.state.theme;
-        if ( [user.themeCode] == themNumber) {
-            // if ( [user.themeCode] == ThemNumber) {
+        // if ( [user.themeCode] == codeNumber) {
+            if ( [user.ThemeCode] == codeNumber) {
             return (<TableRow>
-                    <TableRowColumn  colSpan="5" style={{textAlign: 'right', whiteSpace: "normal"}}>{user.answerDescription}</TableRowColumn>
-                    <TableRowColumn  colSpan="5" style={{textAlign: 'right', whiteSpace: "normal"}}>{user.questionDescription}</TableRowColumn>
-                    {/*<TableRowColumn  colSpan="5" style={{textAlign: 'right', whiteSpace: "normal"}}>{user.AnswerDescription}</TableRowColumn>*/}
-                    {/*<TableRowColumn  colSpan="5" style={{textAlign: 'right', whiteSpace: "normal"}}>{user.QuestionDescription}</TableRowColumn>*/}
+                    {/*<TableRowColumn  colSpan="5" style={{textAlign: 'right', whiteSpace: "normal"}}>{user.answerDescription}</TableRowColumn>*/}
+                    {/*<TableRowColumn  colSpan="5" style={{textAlign: 'right', whiteSpace: "normal"}}>{user.questionDescription}</TableRowColumn>*/}
+                    <TableRowColumn  colSpan="5" style={{textAlign: 'right', whiteSpace: "normal"}}>{user.AnswerDescription}</TableRowColumn>
+                    <TableRowColumn  colSpan="5" style={{textAlign: 'right', whiteSpace: "normal"}}>{user.QuestionDescription}</TableRowColumn>
                 </TableRow>
             );
         }
