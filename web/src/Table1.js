@@ -66,13 +66,13 @@ class TableExampleSimple extends Component {
     displayRow( user, themNumber) {
         var codeNumber = themNumber;
         // var themeNum = this.state.theme;
-        // if ( [user.themeCode] == codeNumber) {
-            if ( [user.ThemeCode] == codeNumber) {
+        if ( [user.themeCode] == codeNumber) {
+            // if ( [user.ThemeCode] == codeNumber) {
             return (<TableRow>
-                    {/*<TableRowColumn  colSpan="5" style={{textAlign: 'right', whiteSpace: "normal"}}>{user.answerDescription}</TableRowColumn>*/}
-                    {/*<TableRowColumn  colSpan="5" style={{textAlign: 'right', whiteSpace: "normal"}}>{user.questionDescription}</TableRowColumn>*/}
-                    <TableRowColumn  colSpan="5" style={{textAlign: 'right', whiteSpace: "normal"}}>{user.AnswerDescription}</TableRowColumn>
-                    <TableRowColumn  colSpan="5" style={{textAlign: 'right', whiteSpace: "normal"}}>{user.QuestionDescription}</TableRowColumn>
+                    <TableRowColumn  colSpan="5" style={{textAlign: 'right', whiteSpace: "normal"}}>{user.answerDescription}</TableRowColumn>
+                    <TableRowColumn  colSpan="5" style={{textAlign: 'right', whiteSpace: "normal"}}>{user.questionDescription}</TableRowColumn>
+                    {/*<TableRowColumn  colSpan="5" style={{textAlign: 'right', whiteSpace: "normal"}}>{user.AnswerDescription}</TableRowColumn>*/}
+                    {/*<TableRowColumn  colSpan="5" style={{textAlign: 'right', whiteSpace: "normal"}}>{user.QuestionDescription}</TableRowColumn>*/}
                 </TableRow>
             );
         }
